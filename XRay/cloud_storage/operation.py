@@ -2,7 +2,8 @@ import os
 import sys
 from XRay.exception import XRayException
 import shutil
-
+from XRay.logger import logging
+import shutil
 
 class LocalOperation:
 
@@ -25,3 +26,23 @@ class LocalOperation:
 
         except Exception as e:
             raise XRayException(e, sys)
+        
+
+    
+    def upload_file(self, from_filename: str, to_filename: str) -> None:
+        
+        logging.info("Entered the upload_file method of S3Operations class")
+
+
+        try:
+
+            
+            shutil.copy(from_filename, to_filename)
+           
+            logging.info("Exited the upload_file method of S3Operations class")
+
+
+        except Exception as e:
+            raise e
+
+        

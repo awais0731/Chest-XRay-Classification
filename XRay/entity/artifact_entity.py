@@ -24,3 +24,14 @@ class ModelTrainerArtifact:
 @dataclass
 class ModelEvaluationArtifact:
     model_accuracy:float
+
+
+@dataclass
+class ModelPusherArtifact:
+    
+    # saved_model_path: str
+    # model_file_path: str
+
+    bentoml_model_name: str
+
+    bentoml_service_name: str

@@ -64,7 +64,7 @@ class ModelTrainerConfig:
         
         self.artifact_dir:str = os.path.join(ARTIFACT_DIR, TIMESTAMP,"model_training")
 
-        self.trained_bentoml_model_name:str = "xray_mode"
+        self.trained_bentoml_model_name:str = "xray_model"
 
         self.trained_model_path:str = os.path.join(self.artifact_dir, TRAINED_MODEL_NAME)
 
@@ -95,3 +95,29 @@ class ModelEvaluationConfig:
         self.total_batch:int = 0
 
         self.optimizer_params:dict = {"lr":0.01, "momentum":0.8}
+
+
+
+@dataclass
+class ModelPusherConfig:
+    def __init__(self):
+        
+        # self.model_evaluation_dir = os.path.join(ARTIFACT_DIR, TIMESTAMP, "model_training")
+
+        # self.model_file_path = os.path.join(self.model_evaluation_dir, TRAINED_MODEL_NAME)
+
+        # timestamp = round(datetime.now().timestamp())
+
+        # self.saved_model_path = os.path.join(
+        #     SAVED_MODEL_DIR,
+        #     f"{timestamp}",
+        #     TRAINED_MODEL_NAME
+        # )
+
+        self.bentoml_model_name: str = BENTOML_MODEL_NAME
+
+        self.bentoml_service_name: str = BENTOML_SERVICE_NAME
+
+        self.train_transforms_key: str = TRAIN_TRANSFORMS_KEY
+
+        self.bentoml_ecr_image: str = BENTOML_ECR_URI
