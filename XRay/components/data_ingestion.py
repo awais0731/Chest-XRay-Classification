@@ -16,7 +16,7 @@ class DataIngestion:
             logging.info("Entered the get_data_from_local method of Data ingestion class")
 
             self.local.syn_from_local(
-                src_folder="D:\data",
+                src_folder=r"D:\DataSets\xray data",
                 dest_folder=self.data_ingestion_config.data_path
             )
 
